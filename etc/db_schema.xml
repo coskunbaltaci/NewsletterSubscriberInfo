@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="coskun_newsletter_subcriber_info" resource="default" engine="innodb" comment="Newsletter Subscriber Info">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="false" nullable="false" identity="true" comment=""/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <column xsi:type="int" name="subscriber_id" unsigned="true" nullable="false" comment="Subscriber ID"/>
+        <column xsi:type="varchar" name="firstname" length="64" nullable="true" comment="Firstname"/>
+        <column xsi:type="varchar" name="lastname" length="64" nullable="true" comment="Lastname"/>
+         <constraint xsi:type="foreign" referenceId="COSKUN_NEWSLETTER_SUBSCRIBER_INFO_SUBSCRIBER_ID_NEWSLETTER_SUBSCRIBER_SUBSCRIBER_ID"
+                table="coskun_newsletter_subcriber_info" column="subscriber_id"
+                referenceTable="newsletter_subscriber" referenceColumn="subscriber_id"
+               onDelete="CASCADE"/>
+    </table>
+</schema>

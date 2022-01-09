@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="adminhtml.newslettrer.subscriber.grid.columnSet">
+            <referenceBlock name="adminhtml.newslettrer.subscriber.grid.columnSet.firstname">
+                <arguments>
+                    <argument name="renderer" xsi:type="string">Coskun\NewsletterSubscriberInfo\Block\Newsletter\Adminhtml\Template\Grid\Renderer\Firstname</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="adminhtml.newslettrer.subscriber.grid.columnSet.lastname">
+                <arguments>
+                    <argument name="renderer" xsi:type="string">Coskun\NewsletterSubscriberInfo\Block\Newsletter\Adminhtml\Template\Grid\Renderer\Lastname</argument>
+                </arguments>
+            </referenceBlock>
+        </referenceBlock>
+    </body>
+</page>

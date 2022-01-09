@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <coskun_newslettersubscriberinfo>
+            <general>
+                <status>1</status>
+                <firstname_field_status>1</firstname_field_status>
+                <firstname_field_label>First Name</firstname_field_label>
+                <lastname_field_status>1</lastname_field_status>
+                <lastname_field_label>Last Name</lastname_field_label>
+                <email_field_label>Enter your email address</email_field_label>
+                <submit_button_label>Subscribe</submit_button_label>
+            </general>
+        </coskun_newslettersubscriberinfo>
+    </default>
+</config>

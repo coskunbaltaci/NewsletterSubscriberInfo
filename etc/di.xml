@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Coskun\NewsletterSubscriberInfo\Api\ConfigInterface" type="Coskun\NewsletterSubscriberInfo\Model\Config" />
+</config>

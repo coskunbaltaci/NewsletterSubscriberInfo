@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="coskun_settings">
+            <label>Coskun Settings</label>
+        </tab>
+        <section id="coskun_newslettersubscriberinfo" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Newsletter Subscriber Info</label>
+            <tab>coskun_settings</tab>
+            <resource>Coskun_NewsletterSubscriberInfo::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Configuration</label>
+                <field id="status" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="firstname_field_status" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Fistname Field Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+                <field id="firstname_field_label" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Firstname Field Placeholder</label>
+                    <comment>This text will display on the frontend.</comment>
+                    <depends>
+                        <field id="status">1</field>
+                        <field id="firstname_field_status">1</field>
+                    </depends>
+                </field>
+                <field id="lastname_field_status" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Lastname Field Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+                <field id="lastname_field_label" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Lastname Field Placeholder</label>
+                    <comment>This text will display on the frontend.</comment>
+                    <depends>
+                        <field id="status">1</field>
+                        <field id="lastname_field_status">1</field>
+                    </depends>
+                </field>
+                <field id="email_field_label" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>E-mail Field Placeholder</label>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+                <field id="submit_button_label" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Submit Button Label</label>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,73 @@
+/*
+ *
+ *  * @author Coskun Baltaci
+ *  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+ *
+ */
+
+& when (@media-common = true){
+    .field.firstname,
+    .field.lastname {
+        margin: 0px 5px 5px 0px !important;
+        width: auto !important;
+    }
+    .field.newsletter {
+        max-width: 100% !important;
+        margin-right: 5px !important;
+    }
+    .block.newsletter .field.firstname .control:before,
+    .block.newsletter .field.lastname .control:before {
+        content: '\e60c' !important;
+    }
+}
+//
+//  Mobile (styles-m.css)
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .block.newsletter .actions {
+        display: block !important;
+        width: 100%;
+        margin-top: 5px !important;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.newsletter .actions {
+        display: block !important;
+        width: 100%;
+        margin-top: 5px !important;
+    }
+}
+
+& when (@media-target = 'mobile'), (@media-target = 'all') {
+    @media only screen and (max-width: 375px) {
+        .block.newsletter .actions {
+            display: block !important;
+            width: 100%;
+            margin-top: 5px !important;
+        }
+    }
+}
+//
+//  Tablet
+//  _____________________________________________
+
+// This will add styles for tablet devices. When using native media-queries, we recommend wrapping your media-queries with media-width Magento mixins or media-target
+& when (@media-target = 'desktop'), (@media-target = 'all') {
+    @media only screen and (min-width: @screen__m) and (max-width: (@screen__xl - 1)) {
+        .field.firstname,
+        .field.lastname {
+            width: 48% !important;
+        }
+        .field.newsletter {
+            max-width: 48% !important;
+            margin-right: 5px !important;
+        }
+        .block.newsletter .actions {
+            display: table-cell !important;
+            max-width: 48% !important;
+            margin-top: 0px !important;
+        }
+    }
+}

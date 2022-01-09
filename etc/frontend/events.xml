@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+  ~ /*
+  ~  * @author Coskun Baltaci
+  ~  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="newsletter_subscriber_save_after">
+        <observer name="Coskun_NewsletterSubscriberInfo_Observer" instance="Coskun\NewsletterSubscriberInfo\Observer\Newsletter\SubscriberSaveAfter" />
+    </event>
+</config>

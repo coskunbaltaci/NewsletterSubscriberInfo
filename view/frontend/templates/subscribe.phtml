@@ -1,0 +1,88 @@
+<?php
+/*
+ *
+ *  * @author Coskun Baltaci
+ *  * @copyright Copyright (c) 2022 "Coskun Baltaci"
+ *
+ */
+
+/** @var Coskun\NewsletterSubscriberInfo\Block\Subscriber $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <?php if($block->getStatus() && $block->getFirstnameFieldStatus()) : ?>
+                <div class="field firstname">
+                    <label class="label" for="firstname">
+                        <span>
+                            <?= $escaper->escapeHtmlAttr(__($block->getFirstnameFieldLabel())) ?>
+                        </span>
+                    </label>
+                    <div class="control">
+                        <input name="firstname"
+                               type="text"
+                               id="firstname"
+                               placeholder="<?= $escaper->escapeHtmlAttr(__($block->getFirstnameFieldLabel())) ?>"
+                               data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php if($block->getStatus() && $block->getLastnameFieldStatus()) : ?>
+                <div class="field lastname">
+                    <label class="label" for="lastname">
+                        <span>
+                            <?php echo $escaper->escapeHtml(__($block->getLastnameFieldLabel())) ?>
+                        </span>
+                    </label>
+                    <div class="control">
+                        <input name="lastname"
+                               type="text"
+                               id="lastname"
+                                placeholder="<?= $escaper->escapeHtmlAttr(__($block->getLastnameFieldLabel())) ?>"
+                                data-validate="{required:true}"
+                        />
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="newsletter">
+                        <span class="label">
+                            <?= $escaper->escapeHtml(__($block->getEmailFieldLabel())) ?>
+                        </span>
+                        <input name="email" type="email" id="newsletter"
+                               placeholder="<?= $block->escapeHtml(__($block->getEmailFieldLabel())) ?>"
+                               data-mage-init='{"mage/trim-input":{}}'
+                               data-validate="{required:true, 'validate-email':true}"
+                        />
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary"
+                        title="<?= $escaper->escapeHtmlAttr(__($block->getSubmitButtonLabel())) ?>"
+                        type="submit"
+                        aria-label="Subscribe">
+                    <span><?= $escaper->escapeHtml(__($block->getSubmitButtonLabel())) ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "newsletter-validate-detail"
+            }
+        }
+    }
+</script>
