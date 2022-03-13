@@ -53,4 +53,10 @@ interface ConfigInterface
      */
     public function getSubmitButtonLabel(string $storeViewCode = null): ?string;
 
+    /**
+     * @param null $storeViewCode
+     * @return string|null
+     */
+    public function getTermsAndConditions(string $storeViewCode = null): ?string;
+
 }

@@ -74,6 +74,31 @@
                     <span><?= $escaper->escapeHtml(__($block->getSubmitButtonLabel())) ?></span>
                 </button>
             </div>
+            <?php if($block->getStatus() && !empty($block->getTermsAndConditions())) : ?>
+                <div class="field newsletter-terms-and-conditions">
+                    <?php foreach($block->getTermsAndConditions() as $key=>$terms) : ?>
+                        <?php 
+                            switch($terms['type']):
+                                case 'info': 
+                        ?>
+                                    <div class="newsletter-terms-and-conditions-info"><?= __($terms['text']) ?></div>
+                                    <?php break; ?>
+                                <?php case 'checkbox': ?>
+                                    <div class="newsletter-terms-and-conditions-checkbox">
+                                        <input 
+                                            type="checkbox" 
+                                            <?= ($terms['is_required'] ? 'data-validate="{required:true}" ' : '') ?>
+                                            name="custom-terms-<?= $key ?>" 
+                                            title="<?= $escaper->escapeHtml(__('Terms and contitions')) ?>" 
+                                            id="newsletter-terms-and-conditions-checkbox-input" 
+                                            class="checkbox">
+                                            <label for="custom-terms-<?= $key ?>"><?= __($terms['text']) ?></label>
+                                    </div>
+                                    <?php break; ?>
+                        <?php endswitch; ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </form>
     </div>
 </div>

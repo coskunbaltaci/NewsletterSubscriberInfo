@@ -1,3 +1,4 @@
+
 # Newsletter Subscriber Info
 
 The module allows those who want to subscribe to the newsletter to save their "name" and "surname" information.
@@ -7,6 +8,8 @@ The module allows those who want to subscribe to the newsletter to save their "n
  ![For Mobile Design](Docs/mobile.png)
  
  ![Admin Panel](Docs/adminpanel.png)
+ 
+ **For Video**
  
  [![Youtube Video](https://img.youtube.com/vi/s2yPzi5rECY/0.jpg)](https://www.youtube.com/watch?v=s2yPzi5rECY)
  
@@ -34,6 +37,10 @@ Module settings can be made under the "***Coskun Settings***" menu under "***Sto
 | **Lastname Field Placeholder** | You may change "Lastname" field label | Last Name |
 | **E-mail Field Placeholder** | You may change "Email Address" field  | Enter your email address |
 | **Submit Button Label** | You may change submit button label | Subscribe |
+| **Newsletter Terms And Conditions** | You may add description and terms&conditions for newsletter form. HTML tags writable. You can see the options and explanations below.  | - |
+|  |  **Text** : Label which shows up on the frontend text  | - |
+|  | **Type** : It's a type of the text. It takes one of "info" or "checkbox".    | - |
+|  |  **Is Required** : This options only for "checkbox" types. You may required option the checkbox and users do not continue without clicking the option.  | - |
  
 # Licence
 

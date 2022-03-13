@@ -63,6 +63,15 @@
                         <field id="status">1</field>
                     </depends>
                 </field>
+                <field id="terms_and_conditions" translate="label" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Newsletter Terms And Conditions</label>
+                    <comment>HTML tags can be written.</comment>
+                    <frontend_model>Coskun\NewsletterSubscriberInfo\Block\Adminhtml\Form\Field\TermsAndConditions</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <depends>
+                        <field id="status">1</field>
+                    </depends>
+                </field>
             </group>
         </section>
     </system>

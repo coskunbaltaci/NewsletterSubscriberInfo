@@ -2,7 +2,7 @@
     "name": "coskun/newslettersubscriberinfo",
     "description": "The module allows those who want to subscribe to the newsletter to save their \"name\" and \"surname\" information.",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "license": [
         "OSL-3.0",
         "AFL-3.0",

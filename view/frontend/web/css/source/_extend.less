@@ -6,18 +6,35 @@
  */
 
 & when (@media-common = true){
-    .field.firstname,
-    .field.lastname {
-        margin: 0px 5px 5px 0px !important;
-        width: auto !important;
+    .field {
+        &.firstname,
+        &.lastname  {
+            margin: 0px 5px 5px 0px !important;
+            width: auto !important;
+        }
+        &.newsletter {
+            max-width: 100% !important;
+            margin-right: 5px !important;
+        }
     }
-    .field.newsletter {
-        max-width: 100% !important;
-        margin-right: 5px !important;
+    .block.newsletter {
+        .field.firstname,
+        .field.lastname {
+            .control:before {
+                content: '\e60c' !important;
+            }
+        }
+    }  
+    input#newsletter-terms-and-conditions-checkbox-input {
+        margin-right: 0px;
     }
-    .block.newsletter .field.firstname .control:before,
-    .block.newsletter .field.lastname .control:before {
-        content: '\e60c' !important;
+    .newsletter-terms-and-conditions {
+        &-info {
+            margin-bottom: 10px;
+        }
+        &-checkbox {
+            margin-bottom: 5px;
+        }
     }
 }
 //
@@ -25,27 +42,39 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    .block.newsletter .actions {
-        display: block !important;
-        width: 100%;
-        margin-top: 5px !important;
+    .block {
+        &.newsletter {
+            .actions {
+                display: block !important;
+                width: 100%;
+                margin-top: 5px !important;
+            }
+        } 
     }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .block.newsletter .actions {
-        display: block !important;
-        width: 100%;
-        margin-top: 5px !important;
+    .block {
+        &.newsletter {
+            .actions {
+                display: block !important;
+                width: 100%;
+                margin-top: 5px !important;
+            }
+        }
     }
 }
 
 & when (@media-target = 'mobile'), (@media-target = 'all') {
     @media only screen and (max-width: 375px) {
-        .block.newsletter .actions {
-            display: block !important;
-            width: 100%;
-            margin-top: 5px !important;
+        .block {
+            &.newsletter {
+                .actions {
+                    display: block !important;
+                    width: 100%;
+                    margin-top: 5px !important;
+                }
+            }
         }
     }
 }

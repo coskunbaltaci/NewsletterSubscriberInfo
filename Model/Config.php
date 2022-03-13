@@ -21,6 +21,7 @@ class Config implements ConfigInterface
     const XML_PATH_LASTNAME_FIELD_LABEL = "coskun_newslettersubscriberinfo/general/lastname_field_label";
     const XML_PATH_EMAIL_FIELD_LABEL = "coskun_newslettersubscriberinfo/general/email_field_label";
     const XML_PATH_SUBMIT_BUTTON_LABEL = "coskun_newslettersubscriberinfo/general/submit_button_label";
+    const XML_PATH_TERMS_AND_CONDITIONS = "coskun_newslettersubscriberinfo/general/terms_and_conditions";
 
     /**
      * @var ScopeConfigInterface
@@ -123,6 +124,19 @@ class Config implements ConfigInterface
     {
         return $this->_scopeConfig->getValue(
             self::XML_PATH_SUBMIT_BUTTON_LABEL,
+            ScopeInterface::SCOPE_STORE,
+            $storeViewCode
+        );
+    }
+
+    /**
+     * @param string|null $storeViewCode
+     * @return string|null
+     */
+    public function getTermsAndConditions(string $storeViewCode = null): ?string
+    {
+        return $this->_scopeConfig->getValue(
+            self::XML_PATH_TERMS_AND_CONDITIONS,
             ScopeInterface::SCOPE_STORE,
             $storeViewCode
         );

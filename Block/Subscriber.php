@@ -11,18 +11,23 @@ namespace Coskun\NewsletterSubscriberInfo\Block;
 use Magento\Framework\View\Element\Template;
 use Magento\Newsletter\Block\Subscribe;
 use Coskun\NewsletterSubscriberInfo\Api\ConfigInterface;
+use Magento\Framework\Serialize\Serializer\Json as Serializer;
 
 class Subscriber extends Subscribe
 {
     protected $configInterface;
 
+    protected $serializer;
+
     public function __construct(
         ConfigInterface $configInterface,
         Template\Context $context,
+        Serializer $serializer,
         array $data = []
     ) {
         parent::__construct($context, $data);
         $this->configInterface = $configInterface;
+        $this->serializer = $serializer;
     }
     /**
      * @return string|null
@@ -72,5 +77,15 @@ class Subscriber extends Subscribe
     public function getSubmitButtonLabel()
     {
         return $this->configInterface->getSubmitButtonLabel();
+    }
+        /**
+     * @return string|null
+     */
+    public function getTermsAndConditions()
+    {
+        if($this->configInterface->getTermsAndConditions()) {
+            return $this->serializer->unserialize($this->configInterface->getTermsAndConditions());
+        }
+        return [];
     }
 }
