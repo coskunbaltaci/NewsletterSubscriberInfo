@@ -65,7 +65,7 @@ class SubscriberSaveAfter implements ObserverInterface
     {
         if ($this->request->isPost() && $this->configInterface->getStatus()) {
             $subscriberInfo = [];
-            $validate = new \Zend_Validate_Regex("/^[a-zA-Z0-9ÖöÜüĞğŞşİıÇç ,.-]{2,26}$/");
+            $validate = new \Zend_Validate_Regex("/^[a-zA-Z0-9ÆæÅåÄäÂâÀàÁáÄäÃãĀāÈèÉéÊêËëĒēĖėĘęÔôŒœŌōÕõØøÒòÓóÖöÜüĞğŞşİıÇç ,.-]{2,26}$/");
             if($this->configInterface->getFirstnameFieldStatus()) {
                 if ($validate->isValid($this->request->getPost('firstname'))) {
                     $subscriberInfo['firstname'] = $this->request->getPost('firstname');
